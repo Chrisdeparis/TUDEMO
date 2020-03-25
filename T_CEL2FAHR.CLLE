@@ -1,0 +1,27 @@
+             PGM
+             /* déclaration des variables */
+             DCL        VAR(&LIBTUADH) TYPE(*CHAR) LEN(10) VALUE('ADHTU')
+
+             /* suppression des modules */
+             DLTMOD     MODULE(&LIBTUADH/SUcel2fahr)
+             MONMSG     CPF2105
+
+             DLTMOD     MODULE(&LIBTUADH/cel2fahrTU)
+             MONMSG     CPF2105
+
+             DLTMOD     MODULE(&LIBTUADH/TDcel2fahr)
+             MONMSG     CPF2105
+
+             /* création des modules */
+             CRTSQLRPGI OBJ(&LIBTUADH/SUcel2fahr) SRCFILE(&LIBTUADH/QRPGSRC) OBJTYPE(*MODULE) +
+                          DBGVIEW(*SOURCE)
+             CRTSQLRPGI OBJ(&LIBTUADH/cel2fahrTU) SRCFILE(&LIBTUADH/QRPGSRC) OBJTYPE(*MODULE) +
+                          DBGVIEW(*SOURCE)
+             CRTSQLRPGI OBJ(&LIBTUADH/TDcel2fahr) SRCFILE(&LIBTUADH/QRPGSRC) OBJTYPE(*MODULE) +
+                          DBGVIEW(*SOURCE)
+
+             /* création programme de service TU */
+             CRTSRVPGM  SRVPGM(&LIBTUADH/T_cel2fahr) MODULE(&LIBTUADH/SUcel2fahr +
+                          &LIBTUADH/cel2fahrTU &LIBTUADH/TDcel2fahr) EXPORT(*ALL) TEXT('TU - +
+                          module cel2fahr') BNDDIR(RPGUNIT/RPGUNIT QC2LE LINK) ACTGRP(*CALLER)
+             ENDPGM 
