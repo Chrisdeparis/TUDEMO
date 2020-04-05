@@ -1,12 +1,15 @@
 # TUDEMO
 Test Unitaire Demo
-- ajouter les BIBs RPGUNIT et ADHTU
-## 1) Créer le CLLE de compilation des modules
+- ajouter les BIBs RPGUNIT et ADHTU ✅
+## 1) Créer le CLLE de compilation des modules et programme de service de test ✅
 
-- ajouter chaque Module SU... TU... et TD...
+- ajouter chaque Module SU... TU... et TD...✅
 
 On pourrait meme ajouter le SAVRSTOBJ dans le CL.
-- SAVRSTOBJ OBJ(T_NOMCLI) LIB(ADHTU) RMTLOCNAME(SRV0803) OBJTYPE(*SRVPGM)
-- pour les modules effectuer les tests pas à pas.
-- se connecter à la machine d'intégration : ajouter les BIBs..
-- rucalltst t_nomcli
+
+> - SAVRSTOBJ OBJ(T_NOMCLI) LIB(ADHTU) RMTLOCNAME(SRV0803) OBJTYPE(*SRVPGM)✅ 
+
+- pour les modules effectuer les tests pas à pas. ✅
+- se connecter à la machine d'intégration : ajouter les BIBs.. ✅
+
+> - rucalltst t_nomcli ✅
